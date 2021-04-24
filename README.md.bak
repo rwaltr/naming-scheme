@@ -119,11 +119,11 @@ atx.r.exmpl.net CNAME gw.atx
 ## Putting it all together
 
 
-Lets put together a simple Homelab and apply the naming.
+Lets put together a simple homelab and apply the naming.
 
 ![Simple Diagram](https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1#R7VpLc9owEP41HMPYll85JoS2B9rJNIe2p45iC1uN7GVkGUx%2FfSUjv3AeZMYEmJoL6NvVa%2Ff7VrKHCZolxWeOV%2FFXCAmbWEZYTNDdxLJMy3Tll0K2GjENjUSchhprgAf6l2jQ0GhOQ5J1HAUAE3TVBQNIUxKIDoY5h03XbQmsO%2BsKR6QHPASY9dEfNBTxDvUdo8G%2FEBrFot6ftiS4ctZAFuMQNi0IzSdoxgHE7ldSzAhT0avisuv36QVrvTBOUnFIhyLy%2FJsFQlf%2B%2FXLp%2Bdm3m%2B%2FWVRXmTGyrHZNQBkA3gYsYIkgxmzfoLYc8DYka1pCtxmcBsJKgKcE%2FRIitzibOBUgoFgnT1t2caqIX96KhDHIekNc2oDmBeUTEK36ojrjkKoGECL6V%2FThhWNB1dx1Ycyaq%2FZqwyh86su%2BJ8m7cNWa5nqkX9VZ0IBeMpmRWM1pFeUkZmwEDXrqjWfmReCY4PJGWxfV98xZJS8RxSGU8K1sKKWnBd5TL0SmkpYkrsurBKp5bConxSq0wKSIl8GlKxAb4UzYNGOShWhc0M8jZl%2BWnTvGacEGK15PcT4rugHxNzqp2VKLbNEK81lDc0mDlNnwazV7aPkAsMlp8%2B1P1nzpV85cermzcFZ3Wtt26J5zKzROuwQGVhw5Unn1K5aG3lbfHYMNw3VJZirtUHgQ3jEZKJELlq0YX%2BJGwe8ioltAjCAGJdGB7hkAGVoX%2FFutxauDSJJ%2FI0z0ZSNqe05G25falXZ%2BkbW2jo2m7T4z%2FWNv2gdp2Tqlte9T2YNqWTN4t%2FAjiRqcXN7rwW65zoB79k95y7bGEvj9l3ilT5owldLASmm2oCOLjlFD75CXUG5kyHFMIXw912Dqo%2B5Ds2Ic9JNfsGZwp%2FsiU4ZgigJcvKIegimW%2FTZVni8rxuGKOB9BwZFlTLnLMfg9aXix7anod2nh%2Bnza2M%2FVRnzjHexPnjry5ON5YZ8Cb8Rpz5rzZe%2Bd%2FFqQZbzRnTpp%2BsXGfeWD6cN5cj7w5b97sFZtzIE1V70bSXAhpjnsdls3mHyKlrfVHGzT%2FBw%3D%3D)
 
-First, we define a FQDN to use as our network domain, We will use example.com. If you want to use your existing domain, use infra.example.com
+First, we define a FQDN to use as our network domain, We will use example.com. If you want to use your exsisting domain, use infra.example.com
 
 Lets name our general use devices
 
@@ -136,7 +136,7 @@ parker IN A 192.168.1.20
 
 Our router is also our gateway, so we can get away with calling it the gateway of our network, or give it a generic name. 
 
-To prove how flexible UN/LOCODE is. I will pick a random small town. Crowell TX, US-5CM
+To prove how flexable UN/LOCCODE is. I will pick a random small town. Crowell TX, US-5CM
 
 ```bind
 gateway.5CM.example.com in A [Updated via DDNS]
@@ -152,5 +152,5 @@ ESXI01.5CM IN CNAME parker
 
 > But rwaltr, your dns names are so verbose!
 
-Use search domains, Set your DHCP servers to search domains from the most specific to the most generic based on their location
+Use search domains, Set your DHCP servers to search domains from the most spesific to the most generic based on their location
 
