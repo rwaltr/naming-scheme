@@ -82,11 +82,10 @@ Platforms can either be considered *worldwide* and take a l1 subdomain, or can e
 |:-------------------:|:---------:|
 |    Digital Ocean    |    DIO    |
 |       Linode        |    LIN    |
-| Amazon Web Services |    AMZ    |
-|    Google Cloud     |    GCE    |
+| Amazon Web Services |    AMS    |
+|    Google Cloud     |    GCP    |
 |   Microsoft Azure   |    AZU    |
 |        Vultr        |    VLR    |
-|                     |           |
 
 ### Single char identifiers 
 
