@@ -154,3 +154,30 @@ ESXI01.5CM IN CNAME parker
 
 Use search domains, Set your DHCP servers to search domains from the most specific to the most generic based on their location
 
+### Multiple Sites
+
+Lets add a new site, S2K
+
+
+```
+gateway.s2k IN A [DDNS]
+s2k IN CNAME gateway.s2k
+```
+
+
+We want to be able to make routes between these two locations, possibly over IPsec, Wireguard, or GRE, but the problem we will face is that these routers will have 2 IPs, their local IP (or, more preferably, their loopback interface) and their public IP.
+
+We can use our r.example.net to create router loopback entries, while using their public names for public IPs.
+
+```
+#S2K
+gateway.s2k IN A [DDNS]
+s2k IN CNAME gateway.s2k
+s2k.r IN A 10.10.1.20
+
+#5CM
+gateway.5cm in A [DDNS]
+5cm in CNAME gateway.5CM
+5cm.r in A 10.10.1.30
+```
+
