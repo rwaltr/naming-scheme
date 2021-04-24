@@ -181,3 +181,14 @@ gateway.5cm in A [DDNS]
 5cm.r in A 10.10.1.30
 ```
 
+### Edge Locations
+
+Your dear sweet mother lets you managed the router. But lets be honest, Her phyiscal location doesnt matter. 
+
+```bind
+gateway.mom IN A [DDNS]
+mom IN CNAME gateway.mom
+#OR
+gateway.mom.c IN A [DDNS]
+mom.c IN CNAME gateway.mom.c
+```
