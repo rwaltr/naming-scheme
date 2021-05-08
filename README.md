@@ -13,7 +13,7 @@ There are a few main types of general computing hosts in today's age, There are 
 
 Bare Metal hosts are limited, long lived devices, they take physical space, require hands on work, and are cared for until they are sold or scrapped.
 
-VMs and cloud instances take no (physical) space, are created to do a specific thing, they borrow space on other servers, but typically have their own IPs, Storage, and individual identities. 
+VMs and cloud instances take no (physical) space, are created to do a specific thing, they borrow space on other machines, but typically have their own IPs, Storage, and individual identities. 
 
 Cloud Instances borrow no space, but exist in specific areas only. 
 
@@ -23,9 +23,9 @@ Containers are purely services, they take space and IPs on other infra.
 
 Physical hosts should have unique names, they have multiple uses throughout their life, Are able to be physically viewed by other people, Physically moved, have multiple interfaces, etc.
 
-`wordlist.txt` is a list of words chosen for their unique phonetic ability to be easily repeated over the phone, unlike "Vhost1" or "ESXI12". A label on the front and rear of these servers would allow anyone with any lack of technical sense to identify a device, and most important, do not allow for individuals to have numbers swapped in their head and interact with the wrong equipment. 
+`wordlist.txt` is a list of words chosen for their unique phonetic ability to be easily repeated over the phone, unlike "Vhost1" or "ESXI12". A label on the front and rear of these machines would allow anyone with any lack of technical sense to identify a device, and most important, do not allow for individuals to have numbers swapped in their head and interact with the wrong equipment. 
 
-If you work with an entity that requires asset tags, they can also be used, they should be prepend with your initials "WT012345" but do not expect anyone nontechnical to be able to help you with your servers. A CMDB or spreadsheet is required for this level of naming, a Label that can be scanned into a public portal is best (snipe-it is pretty legit at this)
+If you work with an entity that requires asset tags, they can also be used, they should be prepend with your initials "WT012345" but do not expect anyone nontechnical to be able to help you with your machines. A CMDB or spreadsheet is required for this level of naming, a Label that can be scanned into a public portal is best (snipe-it is pretty legit at this)
 
 In terms of DNS. A records are preferred, but do plan to sacrifice a root domain to this type of naming, I've found that mentally working with your main domain that you want to use to expose to the world publicly being taken your are domain for everything can lead to frustration and limitations, if your domain is "example.com" grab "exmpl.net" or another shorthand version of your domain.
 
@@ -142,7 +142,7 @@ gateway.5CM.example.com in A [Updated via DDNS]
 5CM.example.com in CNAME gateway.5CM
 ```
 
-Now lets give our servers function names, 
+Now lets give our machines function names, 
 
 ```
 nas.5CM IN CNAME brenda
@@ -151,7 +151,7 @@ ESXI01.5CM IN CNAME parker
 
 > But rwaltr, your dns names are so verbose!
 
-Use search domains, Set your DHCP servers to search domains from the most specific to the most generic based on their location
+Use search domains, Set your DHCP server to search domains from the most specific to the most generic based on their location
 
 ### Multiple Sites
 
