@@ -38,7 +38,7 @@ Taco.exmpl.net A 192.168.1.1
 
 ### Virtual Assets
 
-VMs are generally single use machines that either host a whole application or parts of it. they do not need a full name, but a short-name name for their use.
+VMs are generally single use instances that either host a whole application or parts of it. they do not need a full name, but a short-name name for their use.
 
 ```
 web01.exmpl.net
@@ -47,7 +47,7 @@ db01.exmpl.net
 db02.exmpl.net
 ```
 
-If you have a single one of that type of VM, then using `web` or `db` by itself is fine.
+If you are only going to have a single one of that type of VM, then using `web` or `db` by itself is fine.
 
 ## Organizational names
 
@@ -71,7 +71,7 @@ If your are managing network devices, you might be working with devices at locat
 
 ### Platform identifiers 
 
-Most VMs and hosts today live inside of a platform, such as K8s or ESXI and do not live past it. Cloud providers can also be considered platforms, but their identifiers may work better as a country vs a platform due to their worldwide physical location nature, although I recommend using their 3 character shorthand to prevent interaction with ISO 3166-1 (1.east.amz.exmpl.net vs 1.east.az.exmpl.net), assets within a platform will not likely interact with another platform directly. 
+Most VMs and machines today live inside of a platform, such as K8s or ESXI and do not live past it. Cloud providers can also be considered platforms, but their identifiers may work better as a country vs a platform due to their worldwide physical location nature, although I recommend using their 3 character shorthand to prevent interaction with ISO 3166-1 (1.east.amz.exmpl.net vs 1.east.az.exmpl.net), assets within a platform will not likely interact with another platform directly. 
 
 Platforms can either be considered *worldwide* and take a l1 subdomain, or can exist under a location. like k8s.dio.exmpl.net
 
@@ -182,7 +182,7 @@ gateway.5cm in A [DDNS]
 
 ### Edge Locations
 
-Your dear sweet mother lets you managed the router. But lets be honest, Her phyiscal location doesnt matter. 
+Your dear sweet mother lets you managed the router. But lets be honest, Her physical location doesn't matter. 
 
 ```bind
 gateway.mom IN A [DDNS]
@@ -191,3 +191,18 @@ mom IN CNAME gateway.mom
 gateway.mom.c IN A [DDNS]
 mom.c IN CNAME gateway.mom.c
 ```
+
+
+## Hot Topics
+
+### Split DNS
+
+When most hobbyists decide to make part of their environment public, the first thing on their mind is privacy. Or that internal IPs cannot resolve well to their External ingress. This is not true, this can be resolved using a hairpin Nat. But then it becomes philosophical.
+
+
+Almost all private IP ranges come from [RFC1918](https://tools.ietf.org/html/rfc1918). This means that your private range of IPs is shared by every NATted IP device in the world. No ISP worth their salt will route these IPs and should blackhole them (you also should be blackholing these subnets at your gateway, so that there is no leak).
+
+Therefor, I believe that putting your private IPs in public DNS is perfectly safe. The only time it is a risk is if someone has already wormed into your environment, in which case a `nmap` is just as quick and much more revealing vs your DNS names.
+
+
+
