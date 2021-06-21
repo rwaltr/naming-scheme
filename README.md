@@ -204,5 +204,39 @@ Almost all private IP ranges come from [RFC1918](https://tools.ietf.org/html/rfc
 
 Therefor, I believe that putting your private IPs in public DNS is perfectly safe. The only time it is a risk is if someone has already wormed into your environment, in which case a `nmap` is just as quick and much more revealing vs your DNS names.
 
+### Reserved DNS entries
 
+All of these should never be used as a host name on l1 subdomains, only as service names that are CNAMES, There is a larger list you can ref using..
+```
+curl -s https://raw.githubusercontent.com/nkkollaw/reserved-subdomains/master/reserved-subdomains.yaml | fzf
 
+```
+
+Here is a short list of the most important ones
+
+| Entry  | Reason                                     |
+|---------|--------------------------------------------|
+| WWW     | Old Convention                             |
+| mail    | Convention                                 |
+| server  | Too generic                                |
+| ns1     | Should be a Cname                          |
+| ns*     | Should be a Cname                          |
+| vpn     | VPN locations can change                   |
+| smtp    | Convention                                 |
+| webmail |                                            |
+| test    | pls no                                     |
+| dev     | pls no                                     |
+| bbs     |                                            |
+| cloud   | Too Generic, try using Location Identifier |
+| host    | Pls no                                     |
+| ftp     |                                            |
+| email   |                                            |
+| IMAP    |                                            |
+| owa     | Outlook uses this                          |
+| gw      | We talked about this                       |
+| admin   | Easy target                                |
+| store   |                                            |
+| mx1     | Should be Cname                            |
+| CDN     |                                            |
+| API     |                                            |
+| NTP     | Time Protocol                              |
